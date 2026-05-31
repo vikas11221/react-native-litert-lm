@@ -19,11 +19,16 @@
  */
 
 const path = require('path');
+const packageJson = require('../package.json');
+const GITHUB_REPO = process.env.LITERT_FRAMEWORK_REPO || 'hung-yueh/react-native-litert-lm';
+const ASSET_NAME = process.env.LITERT_FRAMEWORK_ASSET || 'LiteRTLM-ios-frameworks.zip';
+const FRAMEWORK_TAG = 'v0.3.6';
 const PACKAGE_ROOT = path.resolve(__dirname, '..');
 const FRAMEWORKS_DIR = path.join(PACKAGE_ROOT, 'ios', 'Frameworks');
-const FRAMEWORK_TAG = 'v0.3.6';
-const ASSET_URL = 'https://github.com/hung-yueh/react-native-litert-lm/releases/download/v0.3.6/LiteRTLM-ios-frameworks.zip';
+const ASSET_URL = `https://github.com/${GITHUB_REPO}/releases/download/${FRAMEWORK_TAG}/${ASSET_NAME}`;
 module.exports = {
+  GITHUB_REPO,
+  ASSET_NAME,
   FRAMEWORK_TAG,
   PACKAGE_ROOT,
   FRAMEWORKS_DIR,
