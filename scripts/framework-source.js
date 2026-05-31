@@ -19,26 +19,11 @@
  */
 
 const path = require('path');
-const packageJson = require('../package.json');
-
-/** GitHub repo that hosts the framework release asset. */
-const GITHUB_REPO = process.env.LITERT_FRAMEWORK_REPO || 'google-ai-edge/LiteRT-LM';
-
-/** Release asset filename. Must match the file on the GitHub release. */
-const ASSET_NAME = process.env.LITERT_FRAMEWORK_ASSET || 'CLiteRTLM.xcframework.zip';
-
-/** Release tag the asset lives under — the LiteRT-LM engine git tag, e.g. "v0.12.0". */
-const FRAMEWORK_TAG = packageJson.litertLm.iosGitTag;
-
 const PACKAGE_ROOT = path.resolve(__dirname, '..');
 const FRAMEWORKS_DIR = path.join(PACKAGE_ROOT, 'ios', 'Frameworks');
-
-/** Fully-resolved download URL for the framework zip. */
-const ASSET_URL = `https://github.com/${GITHUB_REPO}/releases/download/${FRAMEWORK_TAG}/${ASSET_NAME}`;
-
+const FRAMEWORK_TAG = 'v0.3.6';
+const ASSET_URL = 'https://github.com/hung-yueh/react-native-litert-lm/releases/download/v0.3.6/LiteRTLM-ios-frameworks.zip';
 module.exports = {
-  GITHUB_REPO,
-  ASSET_NAME,
   FRAMEWORK_TAG,
   PACKAGE_ROOT,
   FRAMEWORKS_DIR,
